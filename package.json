@@ -1,0 +1,22 @@
+{
+  "name": "web-scraper",
+  "version": "1.0.0",
+  "description": "A tool to scrape websites",
+  "main": "scrape.js",
+  "dependencies": {
+    "bluebird": "^3.5.5",
+    "cheerio": "^1.0.0-rc.3",
+    "cheerio-tableparser": "^1.0.1",
+    "download-csv": "^1.1.1",
+    "fs": "^0.0.1-security",
+    "node-xlsx": "^0.15.0",
+    "promise": "^8.0.3",
+    "puppeteer": "^1.19.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node scrape.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
