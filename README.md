@@ -11,6 +11,6 @@ Create a list of MahaRERA Project / Agent Registration Numbers in the `inputArra
 
 Open terminal/Command Prompt and run `node scrape.js`. This command will start the scraping process and collect data which shall be saved in `myFile.csv`.
 
-Note: If you wish to disable the opening of Chrome Window in the process of running, got to line number `14` of file `scrape.js` and remove the snippet `{headless: false}`. So the whole command will look as follows:
+Note: If you wish to disable the opening of Chrome Window in the process of running, go to line number `14` of file `scrape.js` and remove the snippet `{headless: false}`. So the whole command will look as follows:
 
 `const browser = await puppeteer.launch();`
