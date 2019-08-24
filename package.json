@@ -10,6 +10,7 @@
     "download-csv": "^1.1.1",
     "fs": "^0.0.1-security",
     "node-xlsx": "^0.15.0",
+    "pending-xhr-puppeteer": "^2.0.0",
     "promise": "^8.0.3",
     "puppeteer": "^1.19.0"
   },

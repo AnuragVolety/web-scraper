@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const xlsx = require('node-xlsx');
+const { PendingXHR } = require('pending-xhr-puppeteer');
 
 let scrape = async () => {
   console.log('Please wait...');
@@ -19,6 +20,15 @@ let scrape = async () => {
   for(var i=0; i<initPages.length; i++){
     initPages[i] = await browser.newPage();
     await initPages[i].goto('https://maharerait.mahaonline.gov.in/SearchList/Search', {"waitUntil" : "networkidle0"});
+    const pendingXHR = new PendingXHR(initPages[i]);
+    if(initPages[i].url() == "https://maharerait.mahaonline.gov.in/Login/Login"){
+        await pendingXHR.waitForAllXhrFinished();
+        await initPages[i].waitFor(500);
+        //bar1.increment();
+        await initPages[i].click('#TheForm > div.row > div:nth-child(3) > div > div > div.btns > div:nth-child(4) > a');
+        await initPages[i].waitFor(1500);
+        //bar1.increment();
+    }
   
     const checkbox = await initPages[i].$('input[value="Promoter"]');
     await checkbox.click();
